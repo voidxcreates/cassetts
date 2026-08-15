@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Deluxe Saloon — playlist</title>
+  <link rel="stylesheet" href="/base.css" />
+  <link rel="stylesheet" href="/Playlist.css" />
+</head>
+<body id="playlist-body">
+  <div class="pole-strip" aria-hidden="true"></div>
+
+  <header class="playlist-hero">
+    <a class="back-link" href="index.html">&larr; All moods</a>
+    <h1 class="mood-name" id="mood-name">Loading…</h1>
+    <p class="mood-tagline" id="mood-tagline"></p>
+  </header>
+
+  <main class="tracklist-wrap">
+    <ul class="tracklist" id="tracklist">
+      <!-- track rows rendered by js/playlist.js -->
+    </ul>
+  </main>
+
+  <!-- audio-only YouTube player target, kept 1x1px and invisible via CSS -->
+  <div id="yt-audio-frame"></div>
+
+  <div class="player-bar" id="player-bar" hidden>
+    <div class="now-playing">
+      <span class="label">Now playing</span>
+      <span class="title" id="now-playing-title">—</span>
+    </div>
+    <div class="player-controls">
+      <button type="button" id="prev-btn" aria-label="Previous song">&#9664;&#9664;</button>
+      <button type="button" id="play-btn" class="play-toggle" aria-label="Play">&#9654;</button>
+      <button type="button" id="next-btn" aria-label="Next song">&#9654;&#9654;</button>
+    </div>
+  </div>
+
+  <script src="/config.js"></script>
+  <!-- loads the YouTube IFrame Player API used for audio-only playback -->
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="/Playlist.js"></script>
+</body>
+</html>

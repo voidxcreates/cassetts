@@ -1,16 +1,3 @@
-/**
- * PLAYLISTS is the single config file the whole site reads from.
- *
- * To add a new mood tile: add a new object to this array.
- * To add/remove songs from a mood: edit that playlist's `songs` array.
- *
- * theme.pattern accepts: "dots" | "stripes" | "waves" | "grain"
- * (patterns are drawn in CSS — see base.css .pattern-* classes)
- *
- * Each song's `youtubeId` is the 11-character id from a YouTube URL,
- * e.g. https://www.youtube.com/watch?v=XXXXXXXXXXX -> "XXXXXXXXXXX"
- * Replace the placeholder ids below with real ones before going live.
- */
 const PLAYLISTS = [
   {
     id: "highway-raat",

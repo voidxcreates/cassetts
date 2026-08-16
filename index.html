@@ -5,19 +5,173 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cassette — pick a tape</title>
   <meta name="description" content="Pull up a chair at the Deluxe Saloon: mood-based radio for a neighbourhood barber shop." />
-  <!-- <link rel="stylesheet" href="/base.css" /> -->
+  <link rel="stylesheet" href="/base.css" />
   <link rel="stylesheet" href="/index.css" />
 </head>
 <body>
-  <!-- <div class="pole-strip" aria-hidden="true"></div> -->
 
-  <header class="home-header">
-    <span class="kicker">Cassette &middot; open all hours</span>
-    <h1><span class="hindi">कैसेट</span>Cassette</h1>
-    <p class="subtitle">
-      Some things sound better on tape
-    </p>
-  </header>
+  <section class="boombox-section">
+
+    <div class="boombox-scene">
+
+      <div class="boombox-shadow"></div>
+
+      <div class="boombox">
+
+        <!-- top controls -->
+        <div class="boombox-top">
+          Cassette &middot; कैसेट
+        <!-- <h1 class="boombox-text"></h1> -->
+
+          
+
+        </div>
+
+
+        <!-- radio display -->
+        <div class="radio-display">
+
+          <div class="radio-band">
+
+            <div class="radio-band-label">
+              FM
+            </div>
+
+            <div class="frequency">
+              <span>88</span>
+              <span>92</span>
+              <span>96</span>
+              <span>100</span>
+              <span>104</span>
+              <span>108</span>
+            </div>
+
+          </div>
+
+          <div class="radio-indicator"></div>
+
+        </div>
+
+
+        <!-- speaker left -->
+        <div class="speaker speaker-left">
+
+          <div class="speaker-ring">
+
+            <div class="speaker-cone">
+
+              <div class="speaker-center"></div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- central cassette player -->
+        <div class="player-unit">
+
+          <div class="player-screen">
+
+            <div class="player-title" id="player-title">
+              No cassette
+            </div>
+
+            <div class="player-status" id="player-status">
+              Select a tape
+            </div>
+
+          </div>
+
+
+          <div
+            class="cassette-slot"
+            id="cassette-slot"
+          >
+
+            <div class="slot-door">
+
+              <div
+                class="inserted-cassette"
+                id="inserted-cassette"
+              >
+
+                <div class="mini-reel left"></div>
+                <div class="mini-reel right"></div>
+
+                <div
+                  class="inserted-label"
+                  id="inserted-label"
+                >
+                  CASSETTE
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="player-buttons">
+
+            <button type="button" data-control="rewind">
+              ◀◀
+            </button>
+
+            <button
+              type="button"
+              data-control="play"
+              id="play-button"
+            >
+              ▶
+            </button>
+
+            <button type="button" data-control="forward">
+              ▶▶
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- speaker right -->
+        <div class="speaker speaker-right">
+
+          <div class="speaker-ring">
+
+            <div class="speaker-cone">
+
+              <div class="speaker-center"></div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- side controls -->
+        <div class="side-control-volume"></div>
+        <div class="side-control-tune"></div>
+
+      </div>
+
+    </div>
+
+
+    <!-- Actual YouTube player.
+         Keep this visually hidden but present in the DOM. -->
+    <div
+      id="youtube-player"
+      class="youtube-player"
+      aria-hidden="true"
+    ></div>
+
+  </section>
+
   <section class="mood-prompt">
     <h2>Pick your cassette</h2>
   </section>

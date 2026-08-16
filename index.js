@@ -33,25 +33,6 @@
   grid.appendChild(tile);
 });
 
-  // PLAYLISTS.forEach((playlist) => {
-  //   const tile = document.createElement("a");
-  //   tile.className = "tile";
-  //   tile.href = `playlist.html?id=${encodeURIComponent(playlist.id)}`;
-
-  //   // background comes straight from this playlist's theme, so every
-  //   // mood tile reads visually distinct without touching the CSS file
-  //   tile.style.background = `linear-gradient(160deg, ${playlist.theme.from}, ${playlist.theme.to})`;
-  //   tile.classList.add(`pattern-${playlist.theme.pattern}`);
-
-  //   tile.innerHTML = `
-  //     <span class="mood-name">${escapeHtml(playlist.title)}</span>
-  //     <span class="mood-tagline">${escapeHtml(playlist.tagline)}</span>
-  //     <span class="mood-count">${playlist.songs.length} songs</span>
-  //   `;
-
-  //   grid.appendChild(tile);
-  // });
-
   function escapeHtml(str) {
     const div = document.createElement("div");
     div.textContent = str;

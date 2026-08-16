@@ -1,9 +1,6 @@
 .home-header {
   text-align: center;
   padding: 56px 20px 28px;
-  background:
-    radial-gradient(ellipse at 50% -20%, rgba(209, 160, 84, 0.16), transparent 60%),
-    var(--color-surface);
   border-bottom: 1px solid var(--color-panel-line);
 }
 
@@ -12,7 +9,6 @@
   font-size: 0.78rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--color-gold);
   margin-bottom: 14px;
 }
 
@@ -282,4 +278,869 @@
 
 @media (prefers-reduced-motion: reduce) {
   .cassette-tile, .cassette-body, .cassette-reel { transition: none; animation: none !important; }
+}
+
+
+/* ==================== */
+
+.boombox-section {
+  position: relative;
+
+  /* padding:
+    30px
+    20px
+    40px; */
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #3c2920,
+      #261914 70%,
+      #180f0b
+    );
+
+  border-bottom:
+    1px solid
+    var(--color-panel-line);
+}
+
+
+/* subtle wooden counter */
+
+.boombox-section::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 80px;
+
+  background:
+    repeating-linear-gradient(
+      8deg,
+      rgba(124, 83, 49, 0.18) 0px,
+      rgba(124, 83, 49, 0.18) 2px,
+      transparent 2px,
+      transparent 18px
+    );
+
+  opacity: 0.45;
+
+  pointer-events: none;
+}
+
+
+.boombox-scene {
+  position: relative;
+
+  width: min(
+    860px,
+    96vw
+  );
+
+  margin:
+    0 auto;
+
+  padding-top: 20px;
+
+  perspective: 1000px;
+}
+
+
+/* ============================================================
+   SHADOW
+   ============================================================ */
+
+.boombox-shadow {
+  position: absolute;
+
+  left: 5%;
+  right: 5%;
+  bottom: 5px;
+
+  height: 25px;
+
+  background:
+    rgba(0, 0, 0, 0.65);
+
+  filter: blur(14px);
+
+  border-radius: 50%;
+}
+
+
+/* ============================================================
+   BOOMBOX BODY
+   ============================================================ */
+.boombox {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1.05fr
+    1fr;
+
+  grid-template-rows:
+    45px
+    78px
+    1fr;
+
+  gap: 10px;
+
+  width: 100%;
+
+  aspect-ratio: 1.8 / 1;
+
+  min-height: 300px;
+
+  padding:
+    12px;
+
+  border-radius: 8px;
+
+  border:
+    2px solid
+    #927863;
+
+  background:
+    linear-gradient(
+      160deg,
+      #e4d1bb,
+      #c4ad97 48%,
+      #927761
+    );
+
+  box-shadow:
+    inset 0 2px 0 rgba(255,255,255,0.5),
+    inset 0 -5px 0 rgba(55,35,25,0.3),
+    0 15px 35px rgba(0,0,0,0.45);
+
+  transform:
+    rotateX(1deg);
+}
+
+
+/* plastic outer frame */
+
+.boombox::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 6px;
+
+  border:
+    1px solid
+    rgba(70, 45, 30, 0.35);
+
+  border-radius: 5px;
+
+  pointer-events: none;
+}
+
+
+/* ============================================================
+   ANTENNA
+   ============================================================ */
+
+.antenna {
+  position: absolute;
+
+  width: 44%;
+
+  height: 3px;
+
+  top: -25px;
+  right: 5%;
+
+  background:
+    #817362;
+
+  transform:
+    rotate(27deg);
+
+  transform-origin: right center;
+
+  box-shadow:
+    0 1px 0 #e1d4c6;
+}
+
+
+/* ============================================================
+   TOP CONTROLS
+   ============================================================ */
+
+.boombox-top {
+  grid-column:
+    1 /
+    4;
+
+  align-items: center;
+  font-size: xx-large;
+  gap: 12px;
+
+  padding:
+    0 18px;
+
+  position: relative;
+  text-align: center;
+  color: var(--color-red);
+}
+
+
+.small-control {
+  width: 28px;
+  height: 11px;
+
+  border-radius: 3px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #ad9881,
+      #625245
+    );
+
+  border:
+    1px solid
+    #716151;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.35);
+}
+
+
+/* ============================================================
+   RADIO DISPLAY
+   ============================================================ */
+
+.radio-display {
+  grid-column:
+    1 /
+    4;
+
+  position: relative;
+
+  margin:
+    0 9%;
+
+  border:
+    2px solid
+    #9a806b;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #61706c,
+      #3f4d49
+    );
+
+  box-shadow:
+    inset 0 2px 5px rgba(0,0,0,0.5);
+
+  overflow: hidden;
+}
+
+.radio-band {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  padding:
+    0 14px;
+
+  color:
+    #d7dbd0;
+
+  font-family:
+    monospace;
+
+  font-size:
+    clamp(
+      8px,
+      1.3vw,
+      14px
+    );
+
+  letter-spacing: 0.12em;
+}
+
+.radio-band-label {
+  padding-right: 10px;
+
+  border-right:
+    1px solid
+    rgba(255,255,255,0.35);
+}
+
+.frequency {
+  flex: 1;
+
+  display: flex;
+
+  justify-content:
+    space-between;
+}
+
+.radio-indicator {
+  position: absolute;
+
+  top: 8px;
+  left: 42%;
+
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background:
+    var(--color-red);
+
+  box-shadow:
+    0 0 9px
+    rgba(184,64,42,0.7);
+
+  animation:
+    radio-blink 2s
+    ease-in-out
+    infinite;
+}
+
+@keyframes radio-blink {
+
+  0%,
+  100% {
+    opacity: .45;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+
+/* ============================================================
+   SPEAKERS
+   ============================================================ */
+
+.speaker {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 0;
+}
+
+
+.speaker-ring {
+  width: 82%;
+  max-width: 235px;
+
+  aspect-ratio: 1;
+
+  border-radius: 50%;
+
+  padding: 7%;
+
+  background:
+    radial-gradient(
+      circle,
+      #1c1916 0%,
+      #0e0d0c 60%,
+      #51473e 61%,
+      #2b2621 70%,
+      #6b5a4c 72%,
+      #b7a18d 76%,
+      #473b32 80%
+    );
+
+  box-shadow:
+    inset 0 4px 8px rgba(0,0,0,0.45),
+    0 3px 2px rgba(255,255,255,0.15);
+}
+
+
+.speaker-cone {
+  width: 100%;
+  height: 100%;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      #181612,
+      #24201c 35%,
+      #0e0d0c 75%
+    );
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  box-shadow:
+    inset 0 0 15px
+    rgba(0,0,0,0.7);
+}
+
+
+.speaker-cone::before {
+  content: "";
+
+  width: 72%;
+  height: 72%;
+
+  border-radius: 50%;
+
+  background:
+    repeating-radial-gradient(
+      circle,
+      rgba(255,255,255,0.12) 0 1px,
+      transparent 1px 5px
+    );
+}
+
+
+.speaker-center {
+  position: absolute;
+
+  width: 26%;
+  aspect-ratio: 1;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      #8a8174,
+      #2c2924 50%,
+      #080807 75%
+    );
+
+  border:
+    2px solid
+    #685f54;
+
+  box-shadow:
+    0 2px 5px rgba(0,0,0,0.6);
+}
+
+
+/* ============================================================
+   CENTRAL PLAYER
+   ============================================================ */
+
+.player-unit {
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  min-width: 0;
+
+  padding:
+    9px 8px;
+
+  border:
+    2px solid
+    #8f7966;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #cfbca5,
+      #a79079
+    );
+
+  box-shadow:
+    inset 0 2px 0 rgba(255,255,255,0.4);
+}
+
+
+.player-screen {
+  height: 40px;
+  text-align: center;
+  padding:
+    5px 8px;
+
+  overflow: hidden;
+
+  background:
+    #161512;
+
+  border:
+    2px solid
+    #66594c;
+
+  box-shadow:
+    inset 0 2px 5px rgba(0,0,0,0.8);
+}
+
+
+.player-title {
+  color:
+    #c2aa67;
+
+  font-family:
+    monospace;
+
+  font-size:
+    clamp(
+      8px,
+      1vw,
+      12px
+    );
+
+  white-space:
+    nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+
+.player-status {
+  color:
+    #8a7d67;
+
+  font-family:
+    monospace;
+
+  font-size:
+    8px;
+
+  margin-top: 2px;
+
+  text-transform:
+    uppercase;
+}
+
+
+/* ============================================================
+   CASSETTE SLOT
+   ============================================================ */
+
+.cassette-slot {
+  position: relative;
+
+  flex: 1;
+
+  min-height: 110px;
+
+  margin:
+    20px 4px;
+
+  background:
+    #171511;
+
+  border:
+    4px solid
+    #6c5c4e;
+
+  box-shadow:
+    inset 0 4px 7px rgba(0,0,0,0.7);
+
+  overflow: hidden;
+}
+
+
+.slot-door {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #594d42,
+      #332d26
+    );
+
+  border:
+    1px solid
+    rgba(255,255,255,0.08);
+
+  transition:
+    transform
+    500ms cubic-bezier(.22,.61,.36,1);
+}
+
+
+.cassette-slot.loaded .slot-door {
+  transform:
+    translateY(-48%);
+}
+
+
+/* ============================================================
+   INSERTED CASSETTE
+   ============================================================ */
+
+.inserted-cassette {
+  /* position: absolute;
+
+  left: 8%;
+  right: 8%;
+
+  top: 25%; */
+
+  height: 58%;
+
+  border-radius: 4px;
+
+  background:
+    linear-gradient(
+      150deg,
+      #d6c0a4,
+      #ad9679
+    );
+
+  border:
+    1px solid
+    #6b5a4b;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-around;
+
+  opacity: .25;
+
+  transform:
+    translateY(40px);
+
+  transition:
+    550ms
+    cubic-bezier(.2,.8,.2,1);
+
+  box-shadow:
+    0 3px 7px rgba(0,0,0,0.55);
+}
+
+
+.cassette-slot.loaded .inserted-cassette {
+  opacity: 1;
+
+  transform:
+    translateY(0);
+}
+
+
+.inserted-label {
+  position: absolute;
+
+  left: 25%;
+  right: 25%;
+
+  top: 23%;
+
+  padding:
+    3px 5px;
+
+  background:
+    var(--color-red);
+
+  color:
+    #f4e9d8;
+
+  text-align:
+    center;
+
+  font-family:
+    var(--font-body);
+
+  font-size:
+    7px;
+
+  font-weight:
+    700;
+
+  text-transform:
+    uppercase;
+
+  letter-spacing:
+    .06em;
+}
+
+
+.mini-reel {
+  width: 28%;
+  aspect-ratio: 1;
+
+  border-radius: 50%;
+
+  border:
+    5px solid
+    #4c443b;
+
+  background:
+    radial-gradient(
+      circle,
+      #0b0b0a 0 25%,
+      #938777 26% 35%,
+      #28251f 36% 65%,
+      #090807 66%
+    );
+}
+
+
+.inserted-cassette.playing
+.mini-reel {
+  animation:
+    cassette-reel-spin
+    1.1s
+    linear
+    infinite;
+}
+
+
+.inserted-cassette.playing
+.mini-reel:last-of-type {
+  animation-duration:
+    1.4s;
+}
+
+
+@keyframes cassette-reel-spin {
+
+  to {
+    transform:
+      rotate(360deg);
+  }
+
+}
+
+
+/* ============================================================
+   PLAYER BUTTONS
+   ============================================================ */
+
+.player-buttons {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 5px;
+}
+
+
+.player-buttons button {
+  min-width: 28px;
+
+  padding:
+    4px 6px;
+
+  border:
+    1px solid
+    #635446;
+
+  border-radius: 2px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #ddd0be,
+      #a38d78
+    );
+
+  color:
+    #372c23;
+
+  font-size:
+    9px;
+
+  cursor:
+    pointer;
+
+  box-shadow:
+    0 2px 0 #59483a;
+}
+
+
+.player-buttons button:active {
+  transform:
+    translateY(2px);
+
+  box-shadow:
+    none;
+}
+
+
+/* ============================================================
+   SIDE KNOBS
+   ============================================================ */
+
+.side-control-volume,
+.side-control-tune {
+  position: absolute;
+
+  right: 7px;
+
+  width: 24px;
+  height: 24px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      #918172,
+      #302a24
+    );
+
+  border:
+    2px solid
+    #64564a;
+
+  box-shadow:
+    0 2px 3px rgba(0,0,0,0.5);
+}
+
+.side-control-volume {
+  top: 36%;
+
+  right: 9px;
+}
+
+.side-control-tune {
+  top: 52%;
+
+  right: 9px;
+}
+
+
+/* ============================================================
+   YOUTUBE
+   ============================================================ */
+
+.youtube-player {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+
+  overflow: hidden;
+
+  opacity: 0;
+
+  pointer-events: none;
 }
